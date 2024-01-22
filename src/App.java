@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
@@ -14,6 +15,14 @@ public class App {
         //Spel
         if (val==1) {
             System.out.println("Hello World!");
+            Random tärning_dator = new Random();
+            Random tärning_spelare = new Random();
+            System.out.println("Datorn attackerar!");
+            int slumptal_dator = tärning_dator.nextInt(6);
+            System.out.println("slumptal:"+slumptal_dator);
+            Thread.sleep(100);
+            int slumptal_spelare = tärning_spelare.nextInt(6);
+            System.out.println("slumptal:"+slumptal_spelare);
         }
 
         //Kod för felaktig inmatning
