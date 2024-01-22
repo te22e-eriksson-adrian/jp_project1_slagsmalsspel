@@ -19,10 +19,10 @@ public class App {
             Random tärning_spelare = new Random();
             System.out.println("Datorn attackerar!");
             int slumptal_dator = tärning_dator.nextInt(6);
-            System.out.println("slumptal:"+slumptal_dator);
             Thread.sleep(100);
             int slumptal_spelare = tärning_spelare.nextInt(6);
-            System.out.println("slumptal:"+slumptal_spelare);
+            String resultat = attack(slumptal_dator, slumptal_spelare);
+            System.out.println(resultat);
         }
 
         //Kod för felaktig inmatning
@@ -33,6 +33,16 @@ public class App {
         //Kod för att avsluta spel
         if (val==3) {
             System.out.println("Spelet avslutas");
+        }
+        tangentbord.close();
+    }
+    static String attack (int tal1, int tal2){
+        if (tal1>tal2) {
+            String vinst = "Datorn träffade!";
+            return vinst;
+        }else{
+            String miss = "Datorn missade spelaren.";
+            return miss;
         }
     }
 }
