@@ -11,18 +11,30 @@ public class App {
         System.out.print("Val: ");
         int val = tangentbord.nextInt();
         tangentbord.nextLine();
+        System.out.println();
         
         //Spel
         if (val==1) {
-            System.out.println("Hello World!");
             Random tärning_dator = new Random();
             Random tärning_spelare = new Random();
+
+            //Datorn attackerar spelaren
             System.out.println("Datorn attackerar!");
             int slumptal_dator = tärning_dator.nextInt(6);
             Thread.sleep(100);
             int slumptal_spelare = tärning_spelare.nextInt(6);
-            String resultat = attack(slumptal_dator, slumptal_spelare);
+            String resultat = dator_attack(slumptal_dator, slumptal_spelare);
             System.out.println(resultat);
+            System.out.println();
+
+            //Spelaren attackerar datorn
+            System.out.println("Du går till attack nu!");
+            slumptal_spelare = tärning_spelare.nextInt(6);
+            Thread.sleep(100);
+            slumptal_dator = tärning_dator.nextInt(6);
+            resultat = spelar_attack(slumptal_spelare, slumptal_dator);
+            System.out.println(resultat);
+            System.out.println();
         }
 
         //Kod för felaktig inmatning
@@ -36,12 +48,21 @@ public class App {
         }
         tangentbord.close();
     }
-    static String attack (int tal1, int tal2){
+    static String dator_attack (int tal1, int tal2){
         if (tal1>tal2) {
             String vinst = "Datorn träffade!";
             return vinst;
         }else{
             String miss = "Datorn missade spelaren.";
+            return miss;
+        }
+    }
+    static String spelar_attack (int tal1, int tal2){
+        if (tal1>tal2) {
+            String vinst = "Du träffade!";
+            return vinst;
+        }else{
+            String miss = "Du missade spelaren.";
             return miss;
         }
     }
