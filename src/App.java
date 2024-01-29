@@ -31,9 +31,23 @@ public class App {
                 int slumptal_spelare = tärning_spelare.nextInt(6);
                 String resultat = dator_attack(slumptal_dator, slumptal_spelare);
                 System.out.println(resultat);
+                System.out.print("Spelare: ");
                 System.out.println(spelar_hp);
+                System.out.print("Dator: ");
                 System.out.println(dator_hp);
                 System.out.println();
+
+                //Kod som kollar ifall någon har hälsopoöng som är lika med noll.
+                if (dator_hp==0) {
+                    System.out.println("Du besegrade datorn, denna förs till sjukhus för akut vård i detta nu och ordningsmakten letar efter dig. Bäst att du ligger lågt!");
+                    System.out.println();
+                    break;
+                }
+                if (spelar_hp==0) {
+                    System.out.println("Du vaknar upp i en sjukhussäng, sjuksköterskan talar om för dig att du legat här i 3 dagar och kräver betalning för att ha räddat livet på dig.");
+                    System.out.println();
+                    break;
+                }
 
                 //Spelaren attackerar datorn
                 System.out.println("Du går till attack nu!");
@@ -42,41 +56,22 @@ public class App {
                 slumptal_dator = tärning_dator.nextInt(6);
                 resultat = spelar_attack(slumptal_spelare, slumptal_dator);
                 System.out.println(resultat);
+                System.out.print("Spelare: ");
                 System.out.println(spelar_hp);
+                System.out.print("Dator: ");
                 System.out.println(dator_hp);
                 System.out.println();
                 
+                //Kod som kollar ifall någon har hälsopoöng som är lika med noll.
                 if (dator_hp==0) {
                     System.out.println("Du besegrade datorn, denna förs till sjukhus för akut vård i detta nu och ordningsmakten letar efter dig. Bäst att du ligger lågt!");
                     System.out.println();
                     break;
-                } else {
-                    //Datorn attackerar spelaren
-                    System.out.println("Datorn attackerar!");
-                    slumptal_dator = tärning_dator.nextInt(6);
-                    Thread.sleep(100);
-                    slumptal_spelare = tärning_spelare.nextInt(6);
-                    resultat = dator_attack(slumptal_dator, slumptal_spelare);
-                    System.out.println(resultat);
-                    System.out.println(spelar_hp);
-                    System.out.println(dator_hp);
-                    System.out.println();
                 }
                 if (spelar_hp==0) {
                     System.out.println("Du vaknar upp i en sjukhussäng, sjuksköterskan talar om för dig att du legat här i 3 dagar och kräver betalning för att ha räddat livet på dig.");
                     System.out.println();
                     break;
-                } else {
-                    //Spelaren attackerar datorn
-                    System.out.println("Du går till attack nu!");
-                    slumptal_spelare = tärning_spelare.nextInt(6);
-                    Thread.sleep(100);
-                    slumptal_dator = tärning_dator.nextInt(6);
-                    resultat = spelar_attack(slumptal_spelare, slumptal_dator);
-                    System.out.println(resultat);
-                    System.out.println(spelar_hp);
-                    System.out.println(dator_hp);
-                    System.out.println();
                 }
             }
         }
