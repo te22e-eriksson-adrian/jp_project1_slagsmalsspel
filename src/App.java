@@ -1,3 +1,4 @@
+//Importering från java-biblioteket
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,15 +18,21 @@ public class App {
         int val = tangentbord.nextInt();
         tangentbord.nextLine();
         System.out.println();
+
+        //Kod för att räkna antal attacker
+        double attack = 0;
         
         switch (val) {
             case 1:
                 //Spel
                 while (dator_hp != 0 && spelar_hp != 0) {
+                    //Kod som skapar tärningar för deltagarna i attacken/matchen
                     Random tärning_dator = new Random();
                     Random tärning_spelare = new Random();
 
                     //Datorn attackerar spelaren
+                    tangentbord.nextLine();
+                    attack++;
                     System.out.println("Datorn attackerar!");
                     int slumptal_dator = tärning_dator.nextInt(6);
                     Thread.sleep(100);
@@ -41,16 +48,20 @@ public class App {
                     //Kod som kollar ifall någon har hälsopoöng som är lika med noll.
                     if (dator_hp==0) {
                         System.out.println("Du besegrade datorn, denna förs till sjukhus för akut vård i detta nu och ordningsmakten letar efter dig. Bäst att du ligger lågt!");
+                        System.out.println("Matchen innehöll "+attack+" attacker.");
                         System.out.println();
                         break;
                     }
                     if (spelar_hp==0) {
                         System.out.println("Du vaknar upp i en sjukhussäng, sjuksköterskan talar om för dig att du legat här i 3 dagar och kräver betalning för att ha räddat livet på dig.");
+                        System.out.println("Matchen innehöll "+attack+" attacker.");
                         System.out.println();
                         break;
                     }
 
                     //Spelaren attackerar datorn
+                    tangentbord.nextLine();
+                    attack++;
                     System.out.println("Du går till attack nu!");
                     slumptal_spelare = tärning_spelare.nextInt(6);
                     Thread.sleep(100);
@@ -66,11 +77,13 @@ public class App {
                     //Kod som kollar ifall någon har hälsopoöng som är lika med noll.
                     if (dator_hp==0) {
                         System.out.println("Du besegrade datorn, denna förs till sjukhus för akut vård i detta nu och ordningsmakten letar efter dig. Bäst att du ligger lågt!");
+                        System.out.println("Matchen innehöll "+attack+" attacker.");
                         System.out.println();
                         break;
                     }
                     if (spelar_hp==0) {
                         System.out.println("Du vaknar upp i en sjukhussäng, sjuksköterskan talar om för dig att du legat här i 3 dagar och kräver betalning för att ha räddat livet på dig.");
+                        System.out.println("Matchen innehöll "+attack+" attacker.");
                         System.out.println();
                         break;
                     }
