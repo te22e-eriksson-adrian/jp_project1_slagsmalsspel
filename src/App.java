@@ -4,6 +4,9 @@
  * (slumptalsgeneratorer) spela om sin tur mot datorn och se vem som vinner.
  * Programmet tar in tangentbordinmatningar för menyval (1, 2, 3, andra tecken 
  * (fel)) och fortgång i spelet (ENTER).
+ * @autor Adrian Eriksson Te22E
+ * @version 1.0
+ * @Since 2024
  */
 
 //Importering från java-biblioteket
@@ -138,6 +141,9 @@ public class App {
     /* Metoderna tolkar vem som fick högst värde på tärningarna
      * och använder den informationen för att skriva ut en passande text
      * som exempelvis "Datorn träffade!" eller "Datorn missade spelaren!" osv.
+     * @param tal1 och tal2 jämförs, om tal1 är lika med tal2 eller högst så träffar datorn spelaren.
+     * @return Skickar tillbaka texten "Datorn träffade!" eller "Datorn missade spelaren!" genom variabel
+     * vinst eller miss.
      */
     static String dator_attack (int tal1, int tal2){    //När datorn attackerar spelaren.
         if (tal1>=tal2) {
@@ -149,6 +155,11 @@ public class App {
             return miss;
         }
     }
+    /*
+    * @param tal1 och tal2 jämförs, om tal1 är lika med tal2 eller högst så träffar spelaren datorn.
+    * @return Skickar tillbaka texten "Du träffade!" eller "Du missade spelaren!" genom variabel
+    * vinst eller miss.
+    */
     static String spelar_attack (int tal1, int tal2){   //När spelaren attackerar datorn.
         if (tal1>=tal2) {
             String vinst = "Du träffade!";
