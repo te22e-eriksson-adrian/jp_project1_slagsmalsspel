@@ -1,17 +1,31 @@
+/* Författare: Adrian Eriksson, Te22E
+ * Programmet låter användaren få möjligheten att spela en digital version
+ * av ett simpelt brädspelsaktigt spel där man med hjälp av tärningar 
+ * (slumptalsgeneratorer) spela om sin tur mot datorn och se vem som vinner.
+ * Programmet tar in tangentbordinmatningar för menyval (1, 2, 3, andra tecken 
+ * (fel)) och fortgång i spelet (ENTER).
+ */
+
 //Importering från java-biblioteket
 import java.util.Random;
 import java.util.Scanner;
 
 public class App {
-    //Hälsopoäng för dator och spelare
+    /* 
+     * Hälsopoäng för dator och spelare.
+     * Detta är vad som avgör vem som vinner spelet för varje omgång.
+     */
     static int dator_hp;
     static int spelar_hp;
 
     public static void main(String[] args) throws Exception {
-        //Variabel för att lagra valalternativ
+        /* Variabel för att lagra valalternativ som görs när menyn visas. */
         int val = 0;
         
-        //Scanner som låter programmet ta in inforamtion från tangentbordet.
+        /* Scanner som låter programmet ta in inforamtion från tangentbordet.
+         * Denna tar in inmatningar från tangentbordet och distribuerar informationen
+         * till den variabel som är likställd med scannern.
+         */
         Scanner tangentbord = new Scanner(System.in);
         
         while (val != 3) {
@@ -121,6 +135,10 @@ public class App {
         tangentbord.close();
     }
     //Metoder för spelet
+    /* Metoderna tolkar vem som fick högst värde på tärningarna
+     * och använder den informationen för att skriva ut en passande text
+     * som exempelvis "Datorn träffade!" eller "Datorn missade spelaren!" osv.
+     */
     static String dator_attack (int tal1, int tal2){    //När datorn attackerar spelaren.
         if (tal1>=tal2) {
             String vinst = "Datorn träffade!";
