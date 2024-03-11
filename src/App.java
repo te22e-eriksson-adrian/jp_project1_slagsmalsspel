@@ -1,23 +1,24 @@
-/* Författare: Adrian Eriksson, Te22E
- * Programmet låter användaren få möjligheten att spela en digital version
- * av ett simpelt brädspelsaktigt spel där man med hjälp av tärningar 
- * (slumptalsgeneratorer) spela om sin tur mot datorn och se vem som vinner.
- * Programmet tar in tangentbordinmatningar för menyval (1, 2, 3, andra tecken 
- * (fel)) och fortgång i spelet (ENTER).
- * @autor Adrian Eriksson Te22E
- * @version 1.0
- * @Since 2024
- */
 
 //Importering från java-biblioteket
 import java.util.Random;
 import java.util.Scanner;
 
+/** Författare: Adrian Eriksson, Te22E
+ * Programmet låter användaren få möjligheten att spela en digital version
+ * av ett simpelt brädspelsaktigt spel där man med hjälp av tärningar 
+ * (slumptalsgeneratorer) spela om sin tur mot datorn och se vem som vinner.
+ * Programmet tar in tangentbordinmatningar för menyval (1, 2, 3, andra tecken 
+ * (fel)) och fortgång i spelet (ENTER).
+ * @author Adrian Eriksson Te22E
+ * @version 1.0
+ * @since 2024
+ */
+
 public class App {
-    /* 
+    /** 
      * Hälsopoäng för dator och spelare.
      * Detta är vad som avgör vem som vinner spelet för varje omgång.
-     */
+     **/
     static int dator_hp;
     static int spelar_hp;
 
@@ -25,10 +26,10 @@ public class App {
         /* Variabel för att lagra valalternativ som görs när menyn visas. */
         int val = 0;
         
-        /* Scanner som låter programmet ta in inforamtion från tangentbordet.
+        /** Scanner som låter programmet ta in inforamtion från tangentbordet.
          * Denna tar in inmatningar från tangentbordet och distribuerar informationen
          * till den variabel som är likställd med scannern.
-         */
+         **/
         Scanner tangentbord = new Scanner(System.in);
         
         while (val != 3) {
@@ -138,7 +139,7 @@ public class App {
         tangentbord.close();
     }
     //Metoder för spelet
-    /* Metoderna tolkar vem som fick högst värde på tärningarna
+    /** Metoderna tolkar vem som fick högst värde på tärningarna
      * och använder den informationen för att skriva ut en passande text
      * som exempelvis "Datorn träffade!" eller "Datorn missade spelaren!" osv.
      * @param tal1 och tal2 jämförs, om tal1 är lika med tal2 eller högst så träffar datorn spelaren.
@@ -155,8 +156,8 @@ public class App {
             return miss;
         }
     }
-    /*
-    * @param tal1 och tal2 jämförs, om tal1 är lika med tal2 eller högst så träffar spelaren datorn.
+    /**
+    * @param  tal1 och tal2 jämförs, om tal1 är lika med tal2 eller högst så träffar spelaren datorn.
     * @return Skickar tillbaka texten "Du träffade!" eller "Du missade spelaren!" genom variabel
     * vinst eller miss.
     */
